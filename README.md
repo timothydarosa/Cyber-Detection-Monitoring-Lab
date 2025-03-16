@@ -941,11 +941,13 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
     
 33.  Launch Terminal.
     
-  
+  ![image](https://github.com/user-attachments/assets/b939ae8e-f400-454a-a6a3-6a307ef51315)   
+
     
 34.  Type **tar xvzf** and your splunk file.
     
-   ![image](https://github.com/user-attachments/assets/0ac24822-37b2-4363-b889-5c70afa9d307)   
+   ![image](https://github.com/user-attachments/assets/103cf343-b3b5-47dc-9f4c-03b131fb707b)   
+
     
 35.  Type ls
     
@@ -963,13 +965,15 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
     
 42.  take note of the splunk web interface.
     
-  ![image](https://github.com/user-attachments/assets/49245e23-2c58-47c0-b8c4-4854136e2753)   
+  ![image](https://github.com/user-attachments/assets/411748e3-f167-4afb-bc43-f4d0a4d438ba)   
+ 
    
 43.  Launch your browser and enter http://splunk:8000
     
 44.  Login with your credentials.
     
-  ![image](https://github.com/user-attachments/assets/1d53f1d1-d7f7-4e4b-b7db-4dc10550940f)   
+  ![image](https://github.com/user-attachments/assets/48aa7d38-be16-47b9-b7c9-01d8a2dd0896)   
+ 
     
 
 ## **Installing a Universal Forwarder**
@@ -1002,16 +1006,20 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
     
 14.  Install Splunk Universal Forwarder.
     
-  ![](https://framerusercontent.com/images/DC2cHgOBdWlGkERxYFvD1jhNCw.png)    ![image](https://github.com/user-attachments/assets/31dc1527-0fe3-4bee-a4fe-f4f4419f4e4c)   
+  ![](https://framerusercontent.com/images/DC2cHgOBdWlGkERxYFvD1jhNCw.png)    ![image](https://github.com/user-attachments/assets/efd1fc7b-ee24-4f6f-aca3-ba496b1b33cd)   
+   
    
 15.  Get your IP address from splunk instance in terminal by typing ifconfig.
     
-  ![image](https://github.com/user-attachments/assets/1036fa4b-95cf-4a24-99b1-35024358c94e)   
+  ![image](https://github.com/user-attachments/assets/79ed458c-ed7c-4cdb-b874-0ecad157ca14)   
+ 
     
 16.  Use your splunk IP address.
     
-  ![image](https://github.com/user-attachments/assets/195a97cf-16c3-49e9-929a-df5d1fe9abe8)   
-    ![image](https://github.com/user-attachments/assets/2fce3326-58c7-4c0a-b980-9e9ebeada878)   
+  ![image](https://github.com/user-attachments/assets/67faf19a-f465-49cf-981f-ad5a792363a6)   
+
+  ![image](https://github.com/user-attachments/assets/c4aff112-2ab8-47f6-ab05-c7363372d277)   
+  
     
 17.  Click install.
     
@@ -1020,7 +1028,8 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
    ![](https://framerusercontent.com/images/LceKL555L5dFWzZz6HpMDFewhKE.png)    
 19.  Click on your domain controller and name your domain controller. Click Next.
     
-   ![image](https://github.com/user-attachments/assets/a3834535-359f-4458-8424-0b6d04685ef9)   
+   ![image](https://github.com/user-attachments/assets/b2927760-b68c-4aa0-90e3-c8fc8ee0ab61)   
+  
     
 20.  Navigate to Local Event Logs and select all of the event logs. Click Next.
     
