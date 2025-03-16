@@ -3,7 +3,8 @@
 
 This walkthrough will equip you with practical skills to build a cybersecurity homelab. Building a Cybersecurity home lab utilizing VMware and pfSense for secure network simulations, apply Security Onion for threat detection, and prepare Kali Linux for attack simulations. You'll also gain experience in configuring Windows systems and using Splunk, as well as integrating various Linux machines for diverse cybersecurity scenarios. I will be following along with cyberwox and cybermentor's walkthroughs for this homelab. We also used domain controllers and Active Directory.
 
-![image](https://github.com/user-attachments/assets/43913107-9732-46a0-a08f-d0bb7c4351c4)   
+![image](https://github.com/user-attachments/assets/400c21eb-19e0-4f24-8027-2327c25b9fac)   
+  
 
 
  Here I will be creating a small scale enterprise environment for testing tabletop exercises and configure essential cybersecurity tools locally. Here is a quick run down of our entire configuration.
@@ -75,11 +76,13 @@ In our cybersecurity homelab, we rely on pfSense, an open-source firewall and ro
    
 **Download pfSense:** Since pfSense doesn't offer ISO files directly anymore, I download the iso file from Dakota State University's repo.
    
-![image](https://github.com/user-attachments/assets/76a3062c-98fc-4193-878e-195c692ddf22)
+![image](https://github.com/user-attachments/assets/e92c3c34-5a3a-4166-8189-be7208b508ed)   
+
        
 1.  Choose your architecture, and find the latest mirror .
     
-    ![image](https://github.com/user-attachments/assets/9fb0ef79-60b5-4356-a782-35ebe9f3a08d)
+    ![image](https://github.com/user-attachments/assets/09b42cd1-5089-4c67-89a4-85c9300e26d5)   
+
 
 
 **Install pfSense on a Virtual Machine:** Create a new virtual machine in your hypervisor (VMware, VirtualBox, etc.), and install pfSense.
@@ -88,12 +91,14 @@ In our cybersecurity homelab, we rely on pfSense, an open-source firewall and ro
     
 2.  Select **Create a New Virtual Machine**
     
-    ![image](https://github.com/user-attachments/assets/5873a093-2b85-4fcc-a0d3-386d3af717f5)
+    ![image](https://github.com/user-attachments/assets/ab7130fe-f93d-4e63-8b30-b1d962aa384c)   
+
 
     
 3.  Select the path to your pfSense ISO image by clicking **Browse**, then click **Next**.
     
-   ![image](https://github.com/user-attachments/assets/ed85bde2-df27-4ca2-84b1-87dc6893957a)
+   ![image](https://github.com/user-attachments/assets/dd0527e4-f326-4fa6-a5d2-b7fc9a8e893f)   
+
    
 4.  Rename Virtual Machine Name to pfSense, then click **Next**.
     
@@ -101,12 +106,14 @@ In our cybersecurity homelab, we rely on pfSense, an open-source firewall and ro
     
 6.  Select 2GB of RAM
     
-    ![image](https://github.com/user-attachments/assets/3bdcd175-a207-4944-93fe-26388c24ee87)
+    ![image](https://github.com/user-attachments/assets/3f0431dc-db90-4cdb-bd81-0718329b3322)   
+
 
    
 7.  Click on **Add** to add 5 more Network Adapters to support the other Virtual Machines for this Lab. Then, under Network Connection, click **Custom** and assign each specific virtual network with each of the new Network Adapters in the dropdown to their respective networks. Once finished, click **Close**.
     
-    ![image](https://github.com/user-attachments/assets/a59cde01-ca85-48b1-bf49-50f2266582c9)
+    ![image](https://github.com/user-attachments/assets/6dee4aec-7e02-41a5-bf32-19131960e578)   
+
    
 8.  Click **Finish**.
     
@@ -160,17 +167,21 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
 1.  Launch VMware.
     
 2.  **Create a New Virtual Machine** and find the path to your **Security Onion ISO image file**.   
-    ![image](https://github.com/user-attachments/assets/0894fdb6-08cf-4b03-9a95-0b2f3e23ccea)   
+    ![image](https://github.com/user-attachments/assets/c9c5a157-5e7f-4020-85af-7b05e856e656)   
+
 
 3.  Select **Linux** and **CentOS 7 64-bit**. Click **Next**.
     
-    ![image](https://github.com/user-attachments/assets/ed514b03-d1c3-4f9f-a6c3-27e161d71cc2)
+   ![image](https://github.com/user-attachments/assets/6f5a9655-ade3-47c8-80a4-2a3bbdc2816d)   
+
+
  
 4.  Choose a name for your Virtual Machine. We will use **SecurityOnion**. Click **Next**.
     
 5.  I am setting Disk Size to **200 GB** and Store virtual disk in a **single file**. Click **Next**.
     
-    ![image](https://github.com/user-attachments/assets/c04ad417-ad7e-43b4-8f19-3ff355e9375a)
+    ![image](https://github.com/user-attachments/assets/f139c494-1cfe-4a8b-ae38-3744a2721f37)   
+
   
 6.  Click **Customize Hardware**.
     
@@ -178,11 +189,13 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
     
 8.  Set number of processor cores to **4**.
     
-    ![image](https://github.com/user-attachments/assets/f504d34d-383e-45f6-b648-57849542d93e)   
+   ![image](https://github.com/user-attachments/assets/86f7b063-f9f2-4505-837d-32d6233b7edf)   
+
     
 9.  Click **Add** to add two network adapters and set **Network Adapter 2 to VMnet4** and **Network Adapter 3 to VMnet5**. Click **Close**.
     
-    ![image](https://github.com/user-attachments/assets/e6ee9400-b464-40cb-829f-467f872ffec1)   
+    ![image](https://github.com/user-attachments/assets/24a59e17-0f6e-442b-b374-fb5fb92a59f6)   
+ 
 
 10.  Click **Finish**.
     
@@ -196,13 +209,15 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
     ![](https://framerusercontent.com/images/lbPPtF74MkVyOBqPMqypexK0jBs.png)    
 2.  **Create** a username and password. Hit **Enter**.
     
-    ![image](https://github.com/user-attachments/assets/caef5b89-7647-429c-971c-9ea767e132bc)   
+    ![image](https://github.com/user-attachments/assets/45a638b8-8a3c-4901-a9be-dbe93868c20e)   
+  
  
 3.  Once it's finished, hit **Enter** to reboot.
     
 4.  **Login** with credentials. Hit **Enter**.
     
-    ![image](https://github.com/user-attachments/assets/e333b6ce-e76a-4cd1-ad3b-76c23b8e6213)   
+    ![image](https://github.com/user-attachments/assets/138c0c21-dc9b-45af-824a-ee5534eb96b0)   
+
     
 5.  Hit **Enter** to select yes to continue installation.
     
@@ -248,7 +263,8 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
     
 22.  Enter an Email Address and Password.
     
-  ![image](https://github.com/user-attachments/assets/47877950-3b5b-4cf5-ba2f-5ce5c43f2cec)   
+  ![image](https://github.com/user-attachments/assets/ff395292-0cce-4725-b574-dd45df0895be)   
+  
        
 23.  Use IP address. Hit Enter.
     
@@ -262,7 +278,8 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
   ![](https://framerusercontent.com/images/iDMybSo0EbsncHyPXUYTzAdKNzo.png)    
 27.  Hit **Tab** to select yes and **Enter** for yes. (**Take note of Access URL** for later. Yours will be different).
     
-  ![image](https://github.com/user-attachments/assets/6502deff-e188-4b6d-8051-b608814233e0)   
+  ![image](https://github.com/user-attachments/assets/a401bf96-9bb5-4940-8bae-9777e2389a9e)   
+ 
    
 28.  Once finished, hit **Enter** to reboot.
     
@@ -271,7 +288,7 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
 
 **Installing Ubuntu on VMware**:
 
-1.  [Download Ubunto here.](https://ubuntu.com/download/desktop)
+1.  [Download Ubuntu here.](https://ubuntu.com/download/desktop)
     
 2.  Launch VMware.
     
@@ -281,13 +298,15 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
     
 5.  Assign a name to your virtual machine and a username and password.
     
-    ![image](https://github.com/user-attachments/assets/53e64b6c-0885-40fd-81bf-76c6be8f2fdd)   
+    ![image](https://github.com/user-attachments/assets/0cb10a6d-904c-4f63-8493-207604c59169)   
+ 
   
 6.  Click next on all the default settings and click finish.
     
 7.  Launch Ubuntu and choose your settings for installation.
     
-    ![image](https://github.com/user-attachments/assets/effed98e-2737-4d7e-a33b-aa069cf5f37d)   
+    ![image](https://github.com/user-attachments/assets/e0ec8cdf-2884-4e93-808a-73b3a408aefa)   
+ 
   
 8.  Once finished, select **restart**.
     
@@ -301,11 +320,13 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
     
 13.  Type your password for sudo
     
-   ![image](https://github.com/user-attachments/assets/8ba2e6b2-bf27-495a-a683-cbc1295cb32b)   
+   ![image](https://github.com/user-attachments/assets/8fb18977-5c1c-453e-b486-702770369e78)   
+ 
   
 14.  Type ifconfig. Note down the IP address in the image.
     
-  ![image](https://github.com/user-attachments/assets/051e8940-c042-4451-9bc4-a51c766936c1)   
+  ![image](https://github.com/user-attachments/assets/d0139ffd-e9b6-4992-9baf-e2cc39832e5c)   
+
    
 15.  Launch Security Onion
     
@@ -313,13 +334,15 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
     
 17.  Type in sudo so-allow. Type in your sudo password.
     
-   ![image](https://github.com/user-attachments/assets/d2fe609b-8717-4e8c-bdc1-54a5d0127d96)   
+   ![image](https://github.com/user-attachments/assets/7129a988-1ba7-49f3-9018-8daf64c17f6e)   
+ 
    
 18.  Type a to select Analyst.
     
 19.  Type in the IP address you noted down from ifconfig in Ubuntu. Hit Enter.
     
-  ![image](https://github.com/user-attachments/assets/034ae995-1ec3-4e5d-9a95-dd722a626cd1)   
+  ![image](https://github.com/user-attachments/assets/6c092783-d952-40bd-9710-fdfc7765395b)   
+  
    
 20.  Go back to Ubuntu.
     
@@ -327,7 +350,8 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
     
 22.  Type in the security onion web interface from the image above it's your splunk IP In my case it's 192.168.230.134.
     
-  ![image](https://github.com/user-attachments/assets/9403dea0-24ea-401c-a532-a2d819665029)   
+  ![image](https://github.com/user-attachments/assets/ad6da669-6870-48b2-989f-fb6dcc60a25e)   
+ 
     
 23.  Click Advanced.
     
@@ -335,12 +359,14 @@ In our cybersecurity homelab, we implement Security Onion, a powerful open-sourc
     
 25.  Log in to Security Onion.
     
-   ![image](https://github.com/user-attachments/assets/389e24da-4d9b-49aa-b7d8-e9fb85574415)   
+   ![image](https://github.com/user-attachments/assets/b8f44efc-a380-43e3-9cc2-1dc9c13d2546)   
+
    
 
 **Test Setup:** Finally, make sure everything works, as you can see here we're already getting some alerts
 
-![image](https://github.com/user-attachments/assets/5aa5bd4e-61ef-4da4-83f9-b3207f4fea1d)   
+![image](https://github.com/user-attachments/assets/ca26964d-bfb8-4979-9391-1b6cc8b885a2)   
+ 
   
 
 ## **Preparing Kali Linux for Attack Simulations**
@@ -362,7 +388,8 @@ Kali Linux is a specialized Linux distribution, specifically tailored for digita
     
 4.  Select Edit virtual machine settings.
     
-    ![image](https://github.com/user-attachments/assets/786b0929-d504-43c2-8e0c-52602e8c5337)   
+    ![image](https://github.com/user-attachments/assets/0c4fe5d4-6b63-4821-ad66-0f38bd427abb)   
+ 
   
 5.  Set your Maximum disk size. We will choose 4GB.
     
@@ -379,7 +406,8 @@ Kali Linux is a specialized Linux distribution, specifically tailored for digita
     
 10.  Open Terminal type in passwd and change the default password to a more secure one of your choice.
     
-  ![image](https://github.com/user-attachments/assets/d4a328b5-db1e-462f-b7ba-d3b93663df12)   
+  ![image](https://github.com/user-attachments/assets/68cb8c8b-2094-4b5c-b5ce-eb6d96629b82)   
+ 
    
 
 **Access pfSense WebConfigurator to make changes to the firewall rules:**
@@ -387,10 +415,12 @@ Kali Linux is a specialized Linux distribution, specifically tailored for digita
 1.  Open Firefox (or another web browser) and enter IP address https://192.168.1.1 in the URL. Go to Advanced and select Accept the Risk and Continue.   
 (At this part of the lab I had trouble accessing the IP address so I realized the Ip was unreachable after some testing, I came to the conclusion that Kali needed an IP assigned so I ran the following command)
 
-    ![image](https://github.com/user-attachments/assets/44b8e498-be86-47e2-8e26-ebcd76f26b30)   
+    ![image](https://github.com/user-attachments/assets/14bd962d-0b1d-4638-865d-a9cd7af418ca)   
+  
 
     
-    ![image](https://github.com/user-attachments/assets/9ba8fc56-62d1-49d2-8353-f4d777adcbcb)
+    ![image](https://github.com/user-attachments/assets/0f549260-2172-4192-be4e-45cb60df3df4)   
+
     
 2.  Login with
     
@@ -457,7 +487,9 @@ Kali Linux is a specialized Linux distribution, specifically tailored for digita
     
 18.  Click Save and Apply Changes.
     
-   ![image](https://github.com/user-attachments/assets/4e34ec3f-a48d-4a23-8c66-b790bd405f44)   
+   ![image](https://github.com/user-attachments/assets/a999ebc3-d36e-4b7e-b5ee-32f3bfd1d5af)   
+   
+  
   
 19.  Navigate to Bridges.
     
@@ -469,18 +501,21 @@ Kali Linux is a specialized Linux distribution, specifically tailored for digita
     
 23.  Choose SpanPort for Span Port.
     
-34.  Click Save.
+24.  Click Save.
     
-  ![image](https://github.com/user-attachments/assets/80f92406-eb0d-42bf-a88d-e507e9fc1bd3)   
+  ![image](https://github.com/user-attachments/assets/b3a840bf-4488-440a-87d0-ba95924ebb61)   
  
-31.  Navigate to Firewall > Rules.
+ 
+25.  Navigate to Firewall > Rules.
     
-32.  Click Add.
+26.  Click Add.
     
-33.  Change Protocol to Any. Click Save.
+27.  Change Protocol to Any. Click Save.
     
-   ![image](https://github.com/user-attachments/assets/b95dc22f-e41a-4aad-939b-ea11584ab14f)   
-   ![image](https://github.com/user-attachments/assets/6f19b1b1-1365-4740-b313-86c47a947d71)   
+   ![image](https://github.com/user-attachments/assets/ee784dbd-a3ff-40d0-af3b-8705a3cd9ee1)   
+ 
+   ![image](https://github.com/user-attachments/assets/7e6cfc1e-5001-4555-aaeb-b773b055d450)   
+ 
 
   
 
@@ -515,7 +550,8 @@ Download Windows Server 2019 and Windows 10:
     
 9.  Click Finish.
     
-    ![image](https://github.com/user-attachments/assets/4264611e-d594-4446-b2ca-381431e8c931)   
+    ![image](https://github.com/user-attachments/assets/fccc4201-e0b5-4cbc-9a07-74137f3fa1af)   
+ 
   
   
 10.  Launch Windows Server 2019.
@@ -548,7 +584,8 @@ Windows Setup:
 
 1.  First, lets rename your pc by navigating to settings > Search for "About this PC" > Rename this PC.
     
-    ![image](https://github.com/user-attachments/assets/65e1ea50-38a6-49e6-8e30-ac4bb98a92c8)   
+    ![image](https://github.com/user-attachments/assets/ddbb1704-da13-4b84-8e06-2f0af1a3df12)   
+  
   
    
 2.  Restart your Virtual Machine.
@@ -565,7 +602,8 @@ Windows Setup:
     
 8.  Select Active Directory Domain Services and click Add Features. Click Next.
     
-    ![image](https://github.com/user-attachments/assets/8ec5ae44-ae1a-4187-818f-f7ebe2ac7a56)   
+    ![image](https://github.com/user-attachments/assets/39b857b1-5bb4-4193-8cb4-2c93a1906216)   
+ 
    
 9.  Click Next for Features.
     
@@ -575,11 +613,13 @@ Windows Setup:
     
 12.  After installation is finished, navigate to notifications > promote this server to a domain controller.
     
-  ![image](https://github.com/user-attachments/assets/ca8953a5-90cf-4e88-aa1f-67f41d35e57c)   
+  ![image](https://github.com/user-attachments/assets/b76c0a07-274b-4ef9-a9d5-c26bc225c3eb)   
+
   
 13.  Select Add a new forest. Enter a Root domain name ending in **.local**. Click Next.
     
-  ![image](https://github.com/user-attachments/assets/5f8914cc-3196-4d5b-a1fc-59c1589969bf)   
+  ![image](https://github.com/user-attachments/assets/9f13badf-69cb-4f0a-be64-c4799a0740c8)   
+ 
     
 14.  Setup your password. Click Next.
     
@@ -587,7 +627,8 @@ Windows Setup:
     
 16.  Click Next once verified.
     
-   ![image](https://github.com/user-attachments/assets/ec29721f-454d-4ebd-a69d-6c4a59db2052)   
+   ![image](https://github.com/user-attachments/assets/e95b0495-cf48-4885-bbb8-b2d8fae2211c)   
+   
     
 17.  Click Next for Paths.
     
@@ -595,7 +636,8 @@ Windows Setup:
     
 19.  Click Install. The system will be rebooted when finished.
     
-   ![image](https://github.com/user-attachments/assets/4241d1ca-5ea9-4ab8-94e3-bdd882ec0d5f)   
+   ![image](https://github.com/user-attachments/assets/360cd935-953d-4eee-805b-d1995bb939a0)   
+  
     
 
 **Install AD DS:** In "Server Roles," select "Active Directory Domain Services" (AD DS). This will prompt you to add some additional features. Click "Add Features," then "Next," and finally "Install."
@@ -618,7 +660,8 @@ Windows Setup:
     
 9.  Check Restart the destination server automatically if required. Then click Install.
     
-    ![image](https://github.com/user-attachments/assets/f34556c4-3b37-4ede-ace4-620bd9016aa3)
+    ![image](https://github.com/user-attachments/assets/ec075c3b-1a8c-46e0-ae81-9d3212c783d0)   
+
    
     
 10.  Once finished, Navigate to notifications > Configure active directory certificate services on the destination server.
@@ -644,13 +687,15 @@ Add Users:
     
 2.  Select your domain > Users > Rick click > New > User.
     
-    ![image](https://github.com/user-attachments/assets/632c7ecb-4c23-46e4-8cf9-225eb703a320)   
+    ![image](https://github.com/user-attachments/assets/eece2dce-eb2e-4102-92d9-153d510f5c20)   
+
     
 3.  Create your user. Click Next.
     
 4.  Create your password. Finish.
     
-    ![image](https://github.com/user-attachments/assets/ac68940c-f27e-4402-b540-c3cd330b91c0)
+    ![image](https://github.com/user-attachments/assets/44408344-8772-4745-8b67-6da4a2be81ae)   
+
    
 
 **Log In:** After the restart, you can log in with your domain administrator credentials.
@@ -670,7 +715,8 @@ Add Users:
     
 2.  Navigate to Network and Internet > Network Connections > Your network.
     
-    ![image](https://github.com/user-attachments/assets/0b60d97e-6fb0-42dd-9980-5d9b4c7eab71)
+    ![image](https://github.com/user-attachments/assets/96ab909c-09fe-4acd-a917-8a8f6a0f66b2)   
+
     
 3.  Right click > Properties.
     
@@ -708,7 +754,8 @@ Add Users:
     
 9.  Change Network Adapter to VMnet3
     
-    ![image](https://github.com/user-attachments/assets/d7e492d5-c00e-4da6-b629-87fd8eb9e7b1)   
+    ![image](https://github.com/user-attachments/assets/bb51ea03-cafd-4935-a155-0103ad81fbef)   
+   
     
 10.  Uncheck "Power on this Virtual Machine after Creation". Click Finish.
     
@@ -775,21 +822,25 @@ Add Users:
     
 7.  Add Windows Server IP Address to DNS servers.
     
-    ![image](https://github.com/user-attachments/assets/620076a4-48ca-46e2-95a0-fb839e40934e)   
+    ![image](https://github.com/user-attachments/assets/34971912-31f8-41d2-8643-cd38183dfb02)   
+  
     
 8.  Enter your domain name from your domain controller.
     
-    ![image](https://github.com/user-attachments/assets/0e3a0393-256e-4947-a32f-ca6bed82cd62)   
+    ![image](https://github.com/user-attachments/assets/cc0e8734-87e2-4e50-bee7-42465cc5a61f)   
+  
     
 9.  Launch Windows 10.
     
 10.  Navigate to Access work or school > Connect > Join this device to a local Active Directory domain. Add your domain.
     
-   ![image](https://github.com/user-attachments/assets/a3379392-b5b8-4e64-910f-8df66dc4ca1e)   
+   ![image](https://github.com/user-attachments/assets/22763972-086a-4194-a64a-11cd120837b9)   
+ 
     
 11.  Set up account info. (Use the same password)
     
-  ![image](https://github.com/user-attachments/assets/ff550bdf-55b2-48ce-8ee9-45369d0c50b2)   
+  ![image](https://github.com/user-attachments/assets/01c1a139-ede8-45a6-9759-c3d09e2937b0)   
+ 
    
 12.  Skip add account.
     
@@ -797,10 +848,12 @@ Add Users:
     
 14.  Inside Windows Server, navigate to Server Manager Dashboard > tools > Active Directory Users and Computers. Confirm that you have added your computer.
     
-   ![image](https://github.com/user-attachments/assets/d2ad1d24-45a1-4da6-8080-a59fa334e6dd)   
+   ![image](https://github.com/user-attachments/assets/6275555e-1600-4247-aae8-aa176573318d)   
+
    
 
-![image](https://github.com/user-attachments/assets/0274f634-ef3c-4cb5-81b1-66f56ac58489)   
+![image](https://github.com/user-attachments/assets/aa63f349-9ecf-4b88-a49a-89469ed6cded)   
+  
    
 
 ## **Configuring Splunk on Ubuntu Server**
@@ -817,7 +870,8 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
     
 5.  Name your virtual machine.
     
-    ![image](https://github.com/user-attachments/assets/b774cec6-92cf-4116-83fc-2b82c095ac10)   
+    ![image](https://github.com/user-attachments/assets/82b01606-f30e-4bac-8679-12f78755ca40)   
+   
    
 6.  Select 100GB disk space and store single file.
     
@@ -841,11 +895,13 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
     
 16.  Click to Continue.
     
-  ![image](https://github.com/user-attachments/assets/f74dbb96-6351-4766-8c86-62e43017317e)
+  ![image](https://github.com/user-attachments/assets/788534e9-e78c-4edf-a628-f9fd22a0aac0)   
+
    
 17.  Enter your profile setup.
     
-   ![image](https://github.com/user-attachments/assets/635a3898-d3df-43fd-b1f4-3b4bf24f3ebf)   
+   ![image](https://github.com/user-attachments/assets/08011d4a-8c61-4835-bb52-f0a6d35932b4)   
+
     
 18.  Install OpenSSH Server. Make sure it is checked.
     
@@ -859,7 +915,8 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
     
 23.  Type in sudo apt install tasksel. Enter your password. Type y for yes.
     
-   ![image](https://github.com/user-attachments/assets/686c55eb-129a-4b65-989f-1b5e3384a9f3)   
+   ![image](https://github.com/user-attachments/assets/520d42b4-a4c7-47ce-b611-bf315c58c12c)   
+
    
 24.  Type sudo apt install ubuntu-desktop (If it's not download try running; sudo apt update then try again)
     
@@ -871,7 +928,8 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
     
 28.  Click on Free Splunk.
     
-  ![image](https://github.com/user-attachments/assets/113a7a6c-d97d-4fc0-95e1-f439dca3874e)   
+  ![image](https://github.com/user-attachments/assets/e2ba40c4-30aa-40e8-b5e9-f9730331c813)   
+ 
     
 29.  Create a free account, I used mail.com for my email.
     
@@ -883,8 +941,7 @@ Setting up Splunk within a VMware virtual machine is an important step in creati
     
 33.  Launch Terminal.
     
-    
-   ![image](https://github.com/user-attachments/assets/06bf1a27-81c5-4b07-a0a8-2d1e6942c8d3)   
+  
     
 34.  Type **tar xvzf** and your splunk file.
     
